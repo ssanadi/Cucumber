@@ -1,13 +1,30 @@
 package com.Cucumber.framework.configreader;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 public class ResourceHelper {
 	
 	
-	
-	public static void main(String arg[])
+	public static String getBaseResourcePath()
 	{
-		System.out.println(ResourceHelper.class.getClass());
-		//hello
+		String path = ResourceHelper.class.getClass().getResource("/").getPath();
+		return path;
+	}
+	
+	public static String getResourcePath(String resource)
+	{
+		String path = getBaseResourcePath()+resource;
+		return path;
 	}
 
+	public static InputStream getResourcePathInputStream(String resource) throws FileNotFoundException
+	{
+		return new FileInputStream(ResourceHelper.getResourcePath(resource));
+		
+	}
+	
+	
+	
 }

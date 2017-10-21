@@ -10,11 +10,11 @@ public class PropertyFileReader implements ConfigReader {
 
 	Properties prop = null;
 	
-	public PropertyFileReader(String resource)
+	public PropertyFileReader()
 	{
 		prop = new Properties();
 		try {
-			prop.load(ResourceHelper.getResourcePathInputStream(resource));
+			prop.load(ResourceHelper.getResourcePathInputStream("configfile/config.properties"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -56,5 +56,9 @@ public class PropertyFileReader implements ConfigReader {
 		return BrowserType.valueOf(prop.getProperty("Browser"));
 	}
 	
-		
+	/*	public static void main(String arg[])
+		{
+			ObjectRepo.reader =new PropertyFileReader();
+			System.out.println(ObjectRepo.reader.getBrowser());
+		}*/
 }

@@ -5,5 +5,5 @@ public enum BrowserType {
 	Firefox,
 	Iexplorer,
 	HtmlUnitDriver,
-	Chrome
+	Chrome;
 }

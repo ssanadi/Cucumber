@@ -2,6 +2,7 @@ package com.Cucumber.framework.helper.TestBase;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import com.Cucumber.framework.browserConfiguration.BrowserType;
 import com.Cucumber.framework.browserConfiguration.ChromeBrowser;
@@ -10,18 +11,20 @@ import com.Cucumber.framework.browserConfiguration.HtmlUnitBrowser;
 import com.Cucumber.framework.browserConfiguration.IExplorerBrowser;
 import com.Cucumber.framework.configreader.ObjectRepo;
 import com.Cucumber.framework.configreader.PropertyFileReader;
+import com.Cucumber.framework.helper.LoggerHelper;
 
 import cucumber.api.java.Before;
 
 public class TestBase {
 	
 	public static WebDriver driver;
+	private final Logger log = LoggerHelper.getLogger(TestBase.class);
 	
 	
 	public WebDriver getBrowserObject(BrowserType bType) throws Exception
 	{
 		
-		//log
+		log.info(bType);
 		try {
 			switch (bType) {
 			case Chrome:
@@ -46,7 +49,7 @@ public class TestBase {
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			// log.
+			 log.equals(e);
 			throw e;
 		}
 		
@@ -57,7 +60,7 @@ public class TestBase {
 	{
 		
 		driver = getBrowserObject(bType);
-		//log
+		log.info("Initializing WebDriver :" +driver);
 		driver.manage().timeouts().pageLoadTimeout(ObjectRepo.reader.getPageLoadTimeOut(), TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(ObjectRepo.reader.getImplicitWait(), TimeUnit.SECONDS);
 		driver.manage().window().maximize();		
@@ -67,9 +70,8 @@ public class TestBase {
 	public void before() throws Exception 
 	{
 		ObjectRepo.reader = new PropertyFileReader();
-		System.out.println(ObjectRepo.reader.getBrowser());
 		setUpDriver(ObjectRepo.reader.getBrowser());
-		driver.get(ObjectRepo.reader.getWebsite());
+		log.info(ObjectRepo.reader.getBrowser());
 	}
 	
 	

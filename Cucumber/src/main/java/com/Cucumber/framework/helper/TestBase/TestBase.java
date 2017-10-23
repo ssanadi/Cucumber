@@ -13,6 +13,8 @@ import com.Cucumber.framework.configreader.ObjectRepo;
 import com.Cucumber.framework.configreader.PropertyFileReader;
 import com.Cucumber.framework.helper.LoggerHelper;
 
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
 public class TestBase {
@@ -74,6 +76,12 @@ public class TestBase {
 		log.info(ObjectRepo.reader.getBrowser());
 	}
 	
+	@After
+	public void after(Scenario scenario) throws Exception
+	{
+		driver.quit();
+		log.info("Closing - "+driver);
+	}
 	
 	/*public static void main(String a[])
 	{

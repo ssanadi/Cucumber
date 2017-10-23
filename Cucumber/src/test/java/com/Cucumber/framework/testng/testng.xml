@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="Test - 1">
   <classes>
-  <class name="com.Cucumber.framework.runner.FacebookLoginFeatureRunner"/>
+  <class name="com.Cucumber.framework.runner.OrangeHRMSignInFeatureRunner"/>
   </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

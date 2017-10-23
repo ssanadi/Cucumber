@@ -19,18 +19,18 @@
 #Sample Feature Definition Template
 
 
-Feature: Login to facebook
+Feature: Login to OrangeHRM
 Keywords Summary : This test will verify login related scenarios to facebook.com
 
 Scenario: Login with valid credentials 
-Given User navigate to the FACEBOOK.COM
+Given User navigate to the OrangeHRM.COM
 When User enters username as "USER" and password as "PASSWORD"
 And User click on login button
 Then login should be successful
 
 
 Scenario: Login with Invalid credentials 
-Given User navigate to the FACEBOOK.COM
+Given User navigate to the OrangeHRM.COM
 When User enters username as "USER" and password as "PASSWORD"
 And User click on login button
 Then login should not be successful

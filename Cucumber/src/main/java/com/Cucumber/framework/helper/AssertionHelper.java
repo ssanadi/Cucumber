@@ -4,6 +4,7 @@ import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import com.Cucumber.framework.configreader.ObjectRepo;
@@ -54,22 +55,47 @@ public class AssertionHelper extends TestBase{
 		return isDisplay;
 	}
 	
+	public static synchronized boolean verifyElementTextEquals(WebElement element, String expectedText){
+		boolean flag = false;
 		
-	public static void main(String[] args) throws Exception {
-		//WebDriver driver = null ;
+		try {
+			String text = element.getText();
+			if(text.equals(expectedText)){
+				log.info(expectedText +" is equlas to actual text "+text);
+				return flag=true;
+			}else{
+				log.error(expectedText +" is NOT equlas to actual text "+text);
+				return flag;
+			}
+			
+		} catch (NoSuchElementException e) {
+			log.error("Element not found "+ e);
+			return flag;
+		}
 		
 		
-		TestBase b = new TestBase();
-		ObjectRepo.reader = new PropertyFileReader();
-		b.setUpDriver(ObjectRepo.reader.getBrowser());
-		b.driver.get("http://amazon.com");
-		JavaScriptHelper js = new JavaScriptHelper(b.driver);
-		b.driver.findElement(By.id("twotabsearchtextbox")).sendKeys("abc");
-		WebElement go = b.driver.findElement(By.id("nav-search-submit-text"));
-		System.out.println( go.getSize());
-		//AssertionHelper as = new AssertionHelper();
-		System.out.println(getPageTitle());
-		System.out.println(verifyPageTitle("Amazon.com: Online"));
-	
 	}
+		
+	public static synchronized boolean verifyElementPartialTextEquals(WebElement element, String expectedText){
+		boolean flag = false;
+		
+		try {
+			String text = element.getText();
+			if(text.contains(expectedText)){
+				log.info(expectedText +" this partial content is present in actual text "+text);
+				return flag=true;
+			}else{
+				log.error(expectedText +" this partial content NOT present in actual text "+text);
+				return flag;
+			}
+			
+		} catch (NoSuchElementException e) {
+			log.error("Element not found "+ e);
+			return flag;
+		}
+		
+		
+	}
+	
+	
 }

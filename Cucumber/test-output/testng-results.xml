@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="1712" started-at="2017-10-23T18:50:28Z" finished-at="2017-10-23T18:50:30Z">
+  <suite name="Suite" duration-ms="139609" started-at="2017-10-28T03:50:00Z" finished-at="2017-10-28T03:52:19Z">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.Cucumber.framework.runner.OrangeHRMSignInFeatureRunner@16c48ac]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Test - 1" duration-ms="1712" started-at="2017-10-23T18:50:28Z" finished-at="2017-10-23T18:50:30Z">
+    <test name="Test - 1" duration-ms="139609" started-at="2017-10-28T03:50:00Z" finished-at="2017-10-28T03:52:19Z">
       <class name="com.Cucumber.framework.runner.OrangeHRMSignInFeatureRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.Cucumber.framework.runner.OrangeHRMSignInFeatureRunner@16c48ac]" name="setUpClass" is-config="true" duration-ms="897" started-at="2017-10-24T00:20:28Z" finished-at="2017-10-24T00:20:29Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.Cucumber.framework.runner.OrangeHRMSignInFeatureRunner@16c48ac]" name="setUpClass" is-config="true" duration-ms="880" started-at="2017-10-28T09:20:00Z" finished-at="2017-10-28T09:20:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.Cucumber.framework.runner.OrangeHRMSignInFeatureRunner@16c48ac]" name="feature" duration-ms="311" started-at="2017-10-24T00:20:29Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2017-10-24T00:20:29Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.Cucumber.framework.runner.OrangeHRMSignInFeatureRunner@16c48ac]" name="feature" duration-ms="138382" started-at="2017-10-28T09:20:01Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2017-10-28T09:22:19Z">
           <params>
             <param index="0">
               <value>
@@ -22,65 +22,10 @@
               </value>
             </param>
           </params>
-          <exception class="cucumber.runtime.CucumberException">
-            <message>
-              <![CDATA[java.lang.NullPointerException: Name is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: java.lang.NullPointerException: Name is null
-	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.NullPointerException: Name is null
-	at java.lang.Enum.valueOf(Unknown Source)
-	at com.Cucumber.framework.browserConfiguration.BrowserType.valueOf(BrowserType.java:1)
-	at com.Cucumber.framework.configreader.PropertyFileReader.getBrowser(PropertyFileReader.java:56)
-	at com.Cucumber.framework.helper.TestBase.TestBase.before(TestBase.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at cucumber.runtime.Utils$1.call(Utils.java:40)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
-	at cucumber.runtime.Utils.invoke(Utils.java:34)
-	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
-	at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:224)
-	at cucumber.runtime.Runtime.runHooks(Runtime.java:212)
-	at cucumber.runtime.Runtime.runBeforeHooks(Runtime.java:202)
-	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:40)
-	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:165)
-	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:63)
-	... 25 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.Cucumber.framework.runner.OrangeHRMSignInFeatureRunner@16c48ac]" name="tearDownClass" is-config="true" duration-ms="183" started-at="2017-10-24T00:20:29Z" finished-at="2017-10-24T00:20:30Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.Cucumber.framework.runner.OrangeHRMSignInFeatureRunner@16c48ac]" name="tearDownClass" is-config="true" duration-ms="34" started-at="2017-10-28T09:22:19Z" finished-at="2017-10-28T09:22:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

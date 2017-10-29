@@ -12,12 +12,12 @@ import com.Cucumber.framework.helper.TestBase.TestBase;
 public class JavaScriptHelper {
 	
 	private WebDriver driver;
-	Logger log = LoggerHelper.getLogger(JavaScriptHelper.class);
+	private final Logger log = LoggerHelper.getLogger(JavaScriptHelper.class);
 	
 	public JavaScriptHelper(WebDriver driver)
 	{
 		this.driver=driver;
-		log.info("JavaScriptHelper Class " +driver);
+		log.info("JavaScriptHelper Class " +this.driver);
 	}
 	
 	
@@ -78,7 +78,7 @@ public class JavaScriptHelper {
 	public void safeJavaScriptClick(WebElement element)
 	{
 		executeScript("arguments[0].click();", element);
-		log.info("Clicking on -" +element);
+		log.info("clicking on - "+element);
 	}
 	/*@SuppressWarnings({ "static-access", "unused" })
 	public static void main(String[] args) throws Exception {
@@ -98,7 +98,7 @@ public class JavaScriptHelper {
 		js1.scrollUpVertically();
 		js1.zoomInAndOutByPercentage("50");
 	
-		
 	}*/
+	
 	
 }

@@ -1,5 +1,7 @@
 package com.Cucumber.framework.helper;
 
+import java.io.FileNotFoundException;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -19,11 +21,11 @@ public class LoggerHelper {
 	
 	}
 
-	/*public static void main(String a[])
+	/*public static void main(String a[]) throws Exception
 	{
 		Logger log;
-		System.out.println(log = LoggerHelpergetLogger(LoggerHelper.class));
-		 log.info(ObjectRepo.reader.getBrowser());
+		System.out.println(ResourceHelper.getBaseResourcePath());
+		System.out.println(ResourceHelper.getResourcePath("configfile/log4j.properties"));
 		
 	}*/
 }

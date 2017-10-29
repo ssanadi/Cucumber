@@ -25,6 +25,8 @@ public class ResourceHelper {
 		
 	}
 	
-	
+	/*public static void main(String[] args) {
+		System.out.println(ResourceHelper.getResourcePath("configfile/log4j.properties"));
+	}*/
 	
 }

@@ -12,6 +12,7 @@ import com.Cucumber.framework.browserConfiguration.IExplorerBrowser;
 import com.Cucumber.framework.configreader.ObjectRepo;
 import com.Cucumber.framework.configreader.PropertyFileReader;
 import com.Cucumber.framework.helper.LoggerHelper;
+import com.Cucumber.framework.helper.ResourceHelper;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -58,7 +59,7 @@ public class TestBase {
 	}
 
 	
-	public void setUpDriver(BrowserType bType) throws Exception
+	public  void setUpDriver(BrowserType bType) throws Exception
 	{
 		
 		driver = getBrowserObject(bType);
@@ -87,7 +88,7 @@ public class TestBase {
 	{
 		TestBase t = new TestBase();
 		try {
-			t.before();
+			System.out.println(ResourceHelper.getResourcePath("configfile/log4j.properties"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -9,7 +9,7 @@ import com.Cucumber.framework.configreader.ObjectRepo;
 import com.Cucumber.framework.configreader.PropertyFileReader;
 import com.Cucumber.framework.helper.TestBase.TestBase;
 
-public class JavaScriptHelper {
+public class JavaScriptHelper{
 	
 	private WebDriver driver;
 	private final Logger log = LoggerHelper.getLogger(JavaScriptHelper.class);
@@ -85,20 +85,28 @@ public class JavaScriptHelper {
 		//WebDriver driver = null ;
 		
 		
-		TestBase b = new TestBase();
-		ObjectRepo.reader = new PropertyFileReader();
-		b.setUpDriver(ObjectRepo.reader.getBrowser());
-		b.driver.get("http://amazon.com");
-		JavaScriptHelper js = new JavaScriptHelper(b.driver);
-		b.driver.findElement(By.id("twotabsearchtextbox")).sendKeys("abc");
-		WebElement go = b.driver.findElement(By.id("nav-search-submit-text"));
-		JavaScriptHelper js1 = new JavaScriptHelper(b.driver);
-		js1.safeJavaScriptClick(go);
-		js1.scrollDownVertically();
-		js1.scrollUpVertically();
-		js1.zoomInAndOutByPercentage("50");
+		//TestBase b = new TestBase();
+		jSObject.abc();
+	}
+	*/
 	
-	}*/
-	
-	
+	/*public void abc(){
+		try {
+			ObjectRepo.reader = new PropertyFileReader();
+			testBaseObject.setUpDriver(ObjectRepo.reader.getBrowser());
+			testBaseObject.driver.get("http://amazon.com");
+			//JavaScriptHelper js = new JavaScriptHelper(b.driver);
+			testBaseObject.driver.findElement(By.id("twotabsearchtextbox")).sendKeys("abc");
+			WebElement go = testBaseObject.driver.findElement(By.id("nav-search-submit-text"));
+			//JavaScriptHelper js1 = new JavaScriptHelper(b.driver);
+			jSObject.safeJavaScriptClick(go);
+			jSObject.scrollDownVertically();
+			jSObject.scrollUpVertically();
+			jSObject.zoomInAndOutByPercentage("50");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	*/
+	}
 }
